@@ -1,0 +1,1788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TsapiServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_TsapiServer_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" />
+      <xsd:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TSAPILIB2" />
+      <xsd:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TsapiServer_getQueryDeviceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryDeviceInfo" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryDeviceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryDeviceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryDeviceInfo_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q1:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryDeviceInfo_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q2:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryDeviceInfo_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q3:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryLastNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryLastNumber" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryLastNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryLastNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryLastNumber_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q4:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryLastNumber_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q5:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryLastNumber_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q6:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentState_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryAgentState" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryAgentStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentState_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q7:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentState_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q8:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentState_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q9:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryMsgWaitingInd_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryMsgWaitingInd" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryMsgWaitingInd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryMsgWaitingIndResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryMsgWaitingInd_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q10:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryMsgWaitingInd_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q11:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryMsgWaitingInd_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q12:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryStationStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryStationStatus" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryStationStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryStationStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryStationStatus_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q13:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryStationStatus_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q14:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryStationStatus_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q15:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryUCID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryUCID" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryUCID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryUCIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryUCID_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q16:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryUCID_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q17:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryUCID_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q18:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAgentState_InputMessage">
+    <wsdl:part name="parameters" element="tns:setAgentState" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAgentState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setAgentStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAgentState_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q19:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAgentState_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q20:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAgentState_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q21:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAlternateCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setAlternateCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAlternateCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setAlternateCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAlternateCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q22:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAlternateCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q23:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAlternateCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q24:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAnswerCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setAnswerCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAnswerCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setAnswerCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAnswerCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q25:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAnswerCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q26:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setAnswerCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q27:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setCallCompletion_InputMessage">
+    <wsdl:part name="parameters" element="tns:setCallCompletion" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setCallCompletion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setCallCompletionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setCallCompletion_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q28:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setCallCompletion_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q29:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setCallCompletion_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q30:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setChangeMonitorFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:setChangeMonitorFilter" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setChangeMonitorFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setChangeMonitorFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setChangeMonitorFilter_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q31:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setChangeMonitorFilter_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q32:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setChangeMonitorFilter_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q33:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setClearCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setClearCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q34:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q35:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q36:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:setClearConnection" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setClearConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearConnection_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q37:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearConnection_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q38:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setClearConnection_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q39:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConferenceCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setConferenceCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConferenceCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setConferenceCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConferenceCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q40:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConferenceCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q41:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConferenceCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q42:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConsultationCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setConsultationCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConsultationCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setConsultationCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConsultationCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q43:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConsultationCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q44:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setConsultationCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q45:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setDeflectCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setDeflectCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setDeflectCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setDeflectCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setDeflectCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q46:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setDeflectCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q47:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setDeflectCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q48:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setGroupPickupCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setGroupPickupCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setGroupPickupCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setGroupPickupCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setGroupPickupCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q49:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setGroupPickupCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q50:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setGroupPickupCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q51:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setHoldCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setHoldCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setHoldCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setHoldCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setHoldCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q52:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setHoldCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q53:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setHoldCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q54:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakeCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMakeCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakeCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMakeCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakeCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q55:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakeCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q56:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakeCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q57:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakePredictiveCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMakePredictiveCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakePredictiveCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMakePredictiveCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakePredictiveCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q58:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakePredictiveCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q59:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMakePredictiveCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q60:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMonitorStop" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMonitorStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorStop_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q61:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorStop_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q62:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorStop_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q63:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setPickupCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setPickupCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setPickupCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setPickupCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setPickupCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q64:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setPickupCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q65:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setPickupCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q66:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setQueryCallMonitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:setQueryCallMonitor" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setQueryCallMonitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setQueryCallMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setQueryCallMonitor_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q67:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setQueryCallMonitor_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q68:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setQueryCallMonitor_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q69:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setReconnectCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setReconnectCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setReconnectCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setReconnectCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setReconnectCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q70:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setReconnectCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q71="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q71:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setReconnectCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q72="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q72:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setRetrieveCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setRetrieveCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setRetrieveCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setRetrieveCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setRetrieveCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q73="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q73:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setRetrieveCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q74="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q74:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setRetrieveCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q75="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q75:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSendDTMFTone_InputMessage">
+    <wsdl:part name="parameters" element="tns:setSendDTMFTone" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSendDTMFTone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setSendDTMFToneResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSendDTMFTone_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q76="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q76:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSendDTMFTone_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q77="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q77:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSendDTMFTone_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q78="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q78:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSetMsgWaitingInd_InputMessage">
+    <wsdl:part name="parameters" element="tns:setSetMsgWaitingInd" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSetMsgWaitingInd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setSetMsgWaitingIndResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSetMsgWaitingInd_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q79="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q79:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSetMsgWaitingInd_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q80="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q80:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSetMsgWaitingInd_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q81="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q81:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotCallReq_InputMessage">
+    <wsdl:part name="parameters" element="tns:setSnapshotCallReq" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotCallReq_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setSnapshotCallReqResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotCallReq_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q82="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q82:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotCallReq_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q83="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q83:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotCallReq_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q84="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q84:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotDeviceReq_InputMessage">
+    <wsdl:part name="parameters" element="tns:setSnapshotDeviceReq" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotDeviceReq_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setSnapshotDeviceReqResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotDeviceReq_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q85="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q85:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotDeviceReq_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q86="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q86:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setSnapshotDeviceReq_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q87="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q87:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setTransferCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setTransferCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setTransferCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setTransferCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setTransferCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q88="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q88:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setTransferCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q89="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q89:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setTransferCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q90="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q90:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setTransferCall_ExeptionFault_FaultMessage">
+    <wsdl:part xmlns:q91="http://schemas.datacontract.org/2004/07/TSAPILIB2" name="detail" element="q91:Exeption" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAcdSplit_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryAcdSplit" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAcdSplit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryAcdSplitResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAcdSplit_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q92="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q92:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAcdSplit_ExeptionFault_FaultMessage">
+    <wsdl:part xmlns:q93="http://schemas.datacontract.org/2004/07/TSAPILIB2" name="detail" element="q93:Exeption" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryAgentLogin" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQueryAgentLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentLogin_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q94="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q94:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_getQueryAgentLogin_ExeptionFault_FaultMessage">
+    <wsdl:part xmlns:q95="http://schemas.datacontract.org/2004/07/TSAPILIB2" name="detail" element="q95:Exeption" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMonitorCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMonitorCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCall_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q96="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q96:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCall_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q97="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q97:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCall_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q98="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q98:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCallsViaDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMonitorCallsViaDevice" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCallsViaDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMonitorCallsViaDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCallsViaDevice_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q99="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q99:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCallsViaDevice_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q100="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q100:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorCallsViaDevice_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q101="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q101:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMonitorDevice" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMonitorDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorDevice_CSTAFailFault_FaultMessage">
+    <wsdl:part xmlns:q102="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q102:CSTAFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorDevice_ACSFailFault_FaultMessage">
+    <wsdl:part xmlns:q103="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q103:ACSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_setMonitorDevice_SYSFailFault_FaultMessage">
+    <wsdl:part xmlns:q104="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" name="detail" element="q104:SYSFail" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnReady_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnReady" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnNotReady_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnNotReady" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnAftCall_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAftCall" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnLogin_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnLogin" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnLoginDevice_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnLoginDevice" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnLogout_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnLogout" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnLogoutDevice_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnLogoutDevice" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnCallCleared_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCallCleared" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnConferenced_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnConferenced" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnConnectionCleared_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnConnectionCleared" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnDelivered_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnDelivered" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnDiverted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnDiverted" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnEstablished_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnEstablished" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnFailed_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnFailed" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnHeld_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnHeld" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnNetworkReached_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnNetworkReached" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnOriginated_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnOriginated" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnQueued_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnQueued" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnRetrieved_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnRetrieved" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnServiceInitiated_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnServiceInitiated" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnTransferred_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnTransferred" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnCallInformation_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCallInformation" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnDoNotDisturb_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnDoNotDisturb" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnForwarding_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnForwarding" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnMessageWaiting_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnMessageWaiting" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnBackInService_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnBackInService" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnOutOfService_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnOutOfService" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnPrivateStatus_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPrivateStatus" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_OnMonitorEnded_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnMonitorEnded" />
+  </wsdl:message>
+  <wsdl:message name="TsapiServer_ServerFail_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ServerFail" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="TsapiServer">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getQueryDeviceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/getQueryDeviceInfo" message="tns:TsapiServer_getQueryDeviceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/getQueryDeviceInfoResponse" message="tns:TsapiServer_getQueryDeviceInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryDeviceInfoCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_getQueryDeviceInfo_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryDeviceInfoACSFailFault" name="ACSFailFault" message="tns:TsapiServer_getQueryDeviceInfo_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryDeviceInfoSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_getQueryDeviceInfo_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getQueryLastNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/getQueryLastNumber" message="tns:TsapiServer_getQueryLastNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/getQueryLastNumberResponse" message="tns:TsapiServer_getQueryLastNumber_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryLastNumberCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_getQueryLastNumber_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryLastNumberACSFailFault" name="ACSFailFault" message="tns:TsapiServer_getQueryLastNumber_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryLastNumberSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_getQueryLastNumber_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getQueryAgentState">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentState" message="tns:TsapiServer_getQueryAgentState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentStateResponse" message="tns:TsapiServer_getQueryAgentState_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentStateCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_getQueryAgentState_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentStateACSFailFault" name="ACSFailFault" message="tns:TsapiServer_getQueryAgentState_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentStateSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_getQueryAgentState_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getQueryMsgWaitingInd">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/getQueryMsgWaitingInd" message="tns:TsapiServer_getQueryMsgWaitingInd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/getQueryMsgWaitingIndResponse" message="tns:TsapiServer_getQueryMsgWaitingInd_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryMsgWaitingIndCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_getQueryMsgWaitingInd_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryMsgWaitingIndACSFailFault" name="ACSFailFault" message="tns:TsapiServer_getQueryMsgWaitingInd_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryMsgWaitingIndSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_getQueryMsgWaitingInd_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getQueryStationStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/getQueryStationStatus" message="tns:TsapiServer_getQueryStationStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/getQueryStationStatusResponse" message="tns:TsapiServer_getQueryStationStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryStationStatusCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_getQueryStationStatus_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryStationStatusACSFailFault" name="ACSFailFault" message="tns:TsapiServer_getQueryStationStatus_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryStationStatusSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_getQueryStationStatus_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getQueryUCID">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/getQueryUCID" message="tns:TsapiServer_getQueryUCID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/getQueryUCIDResponse" message="tns:TsapiServer_getQueryUCID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryUCIDCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_getQueryUCID_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryUCIDACSFailFault" name="ACSFailFault" message="tns:TsapiServer_getQueryUCID_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryUCIDSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_getQueryUCID_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setAgentState">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setAgentState" message="tns:TsapiServer_setAgentState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setAgentStateResponse" message="tns:TsapiServer_setAgentState_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAgentStateCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setAgentState_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAgentStateACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setAgentState_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAgentStateSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setAgentState_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setAlternateCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setAlternateCall" message="tns:TsapiServer_setAlternateCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setAlternateCallResponse" message="tns:TsapiServer_setAlternateCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAlternateCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setAlternateCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAlternateCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setAlternateCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAlternateCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setAlternateCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setAnswerCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setAnswerCall" message="tns:TsapiServer_setAnswerCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setAnswerCallResponse" message="tns:TsapiServer_setAnswerCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAnswerCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setAnswerCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAnswerCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setAnswerCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setAnswerCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setAnswerCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setCallCompletion">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setCallCompletion" message="tns:TsapiServer_setCallCompletion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setCallCompletionResponse" message="tns:TsapiServer_setCallCompletion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setCallCompletionCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setCallCompletion_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setCallCompletionACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setCallCompletion_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setCallCompletionSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setCallCompletion_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setChangeMonitorFilter">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setChangeMonitorFilter" message="tns:TsapiServer_setChangeMonitorFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setChangeMonitorFilterResponse" message="tns:TsapiServer_setChangeMonitorFilter_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setChangeMonitorFilterCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setChangeMonitorFilter_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setChangeMonitorFilterACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setChangeMonitorFilter_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setChangeMonitorFilterSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setChangeMonitorFilter_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setClearCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setClearCall" message="tns:TsapiServer_setClearCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setClearCallResponse" message="tns:TsapiServer_setClearCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setClearCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setClearCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setClearCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setClearCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setClearCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setClearCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setClearConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setClearConnection" message="tns:TsapiServer_setClearConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setClearConnectionResponse" message="tns:TsapiServer_setClearConnection_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setClearConnectionCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setClearConnection_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setClearConnectionACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setClearConnection_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setClearConnectionSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setClearConnection_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setConferenceCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setConferenceCall" message="tns:TsapiServer_setConferenceCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setConferenceCallResponse" message="tns:TsapiServer_setConferenceCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setConferenceCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setConferenceCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setConferenceCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setConferenceCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setConferenceCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setConferenceCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setConsultationCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setConsultationCall" message="tns:TsapiServer_setConsultationCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setConsultationCallResponse" message="tns:TsapiServer_setConsultationCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setConsultationCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setConsultationCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setConsultationCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setConsultationCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setConsultationCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setConsultationCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setDeflectCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setDeflectCall" message="tns:TsapiServer_setDeflectCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setDeflectCallResponse" message="tns:TsapiServer_setDeflectCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setDeflectCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setDeflectCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setDeflectCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setDeflectCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setDeflectCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setDeflectCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setGroupPickupCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setGroupPickupCall" message="tns:TsapiServer_setGroupPickupCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setGroupPickupCallResponse" message="tns:TsapiServer_setGroupPickupCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setGroupPickupCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setGroupPickupCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setGroupPickupCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setGroupPickupCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setGroupPickupCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setGroupPickupCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setHoldCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setHoldCall" message="tns:TsapiServer_setHoldCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setHoldCallResponse" message="tns:TsapiServer_setHoldCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setHoldCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setHoldCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setHoldCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setHoldCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setHoldCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setHoldCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setMakeCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setMakeCall" message="tns:TsapiServer_setMakeCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setMakeCallResponse" message="tns:TsapiServer_setMakeCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMakeCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setMakeCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMakeCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setMakeCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMakeCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setMakeCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setMakePredictiveCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setMakePredictiveCall" message="tns:TsapiServer_setMakePredictiveCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setMakePredictiveCallResponse" message="tns:TsapiServer_setMakePredictiveCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMakePredictiveCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setMakePredictiveCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMakePredictiveCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setMakePredictiveCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMakePredictiveCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setMakePredictiveCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setMonitorStop">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setMonitorStop" message="tns:TsapiServer_setMonitorStop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setMonitorStopResponse" message="tns:TsapiServer_setMonitorStop_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorStopCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setMonitorStop_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorStopACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setMonitorStop_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorStopSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setMonitorStop_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setPickupCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setPickupCall" message="tns:TsapiServer_setPickupCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setPickupCallResponse" message="tns:TsapiServer_setPickupCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setPickupCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setPickupCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setPickupCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setPickupCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setPickupCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setPickupCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setQueryCallMonitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setQueryCallMonitor" message="tns:TsapiServer_setQueryCallMonitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setQueryCallMonitorResponse" message="tns:TsapiServer_setQueryCallMonitor_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setQueryCallMonitorCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setQueryCallMonitor_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setQueryCallMonitorACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setQueryCallMonitor_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setQueryCallMonitorSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setQueryCallMonitor_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setReconnectCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setReconnectCall" message="tns:TsapiServer_setReconnectCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setReconnectCallResponse" message="tns:TsapiServer_setReconnectCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setReconnectCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setReconnectCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setReconnectCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setReconnectCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setReconnectCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setReconnectCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setRetrieveCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setRetrieveCall" message="tns:TsapiServer_setRetrieveCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setRetrieveCallResponse" message="tns:TsapiServer_setRetrieveCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setRetrieveCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setRetrieveCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setRetrieveCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setRetrieveCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setRetrieveCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setRetrieveCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setSendDTMFTone">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setSendDTMFTone" message="tns:TsapiServer_setSendDTMFTone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setSendDTMFToneResponse" message="tns:TsapiServer_setSendDTMFTone_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSendDTMFToneCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setSendDTMFTone_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSendDTMFToneACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setSendDTMFTone_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSendDTMFToneSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setSendDTMFTone_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setSetMsgWaitingInd">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setSetMsgWaitingInd" message="tns:TsapiServer_setSetMsgWaitingInd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setSetMsgWaitingIndResponse" message="tns:TsapiServer_setSetMsgWaitingInd_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSetMsgWaitingIndCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setSetMsgWaitingInd_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSetMsgWaitingIndACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setSetMsgWaitingInd_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSetMsgWaitingIndSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setSetMsgWaitingInd_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setSnapshotCallReq">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotCallReq" message="tns:TsapiServer_setSnapshotCallReq_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotCallReqResponse" message="tns:TsapiServer_setSnapshotCallReq_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotCallReqCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setSnapshotCallReq_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotCallReqACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setSnapshotCallReq_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotCallReqSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setSnapshotCallReq_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setSnapshotDeviceReq">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotDeviceReq" message="tns:TsapiServer_setSnapshotDeviceReq_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotDeviceReqResponse" message="tns:TsapiServer_setSnapshotDeviceReq_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotDeviceReqCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setSnapshotDeviceReq_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotDeviceReqACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setSnapshotDeviceReq_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setSnapshotDeviceReqSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setSnapshotDeviceReq_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setTransferCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setTransferCall" message="tns:TsapiServer_setTransferCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setTransferCallResponse" message="tns:TsapiServer_setTransferCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setTransferCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setTransferCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setTransferCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setTransferCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setTransferCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setTransferCall_SYSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setTransferCallExeptionFault" name="ExeptionFault" message="tns:TsapiServer_setTransferCall_ExeptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getQueryAcdSplit">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/getQueryAcdSplit" message="tns:TsapiServer_getQueryAcdSplit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/getQueryAcdSplitResponse" message="tns:TsapiServer_getQueryAcdSplit_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryAcdSplitCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_getQueryAcdSplit_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryAcdSplitExeptionFault" name="ExeptionFault" message="tns:TsapiServer_getQueryAcdSplit_ExeptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getQueryAgentLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentLogin" message="tns:TsapiServer_getQueryAgentLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentLoginResponse" message="tns:TsapiServer_getQueryAgentLogin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentLoginCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_getQueryAgentLogin_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/getQueryAgentLoginExeptionFault" name="ExeptionFault" message="tns:TsapiServer_getQueryAgentLogin_ExeptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setMonitorCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCall" message="tns:TsapiServer_setMonitorCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallResponse" message="tns:TsapiServer_setMonitorCall_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setMonitorCall_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setMonitorCall_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setMonitorCall_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setMonitorCallsViaDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallsViaDevice" message="tns:TsapiServer_setMonitorCallsViaDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallsViaDeviceResponse" message="tns:TsapiServer_setMonitorCallsViaDevice_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallsViaDeviceCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setMonitorCallsViaDevice_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallsViaDeviceACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setMonitorCallsViaDevice_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorCallsViaDeviceSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setMonitorCallsViaDevice_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setMonitorDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/TsapiServer/setMonitorDevice" message="tns:TsapiServer_setMonitorDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/setMonitorDeviceResponse" message="tns:TsapiServer_setMonitorDevice_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorDeviceCSTAFailFault" name="CSTAFailFault" message="tns:TsapiServer_setMonitorDevice_CSTAFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorDeviceACSFailFault" name="ACSFailFault" message="tns:TsapiServer_setMonitorDevice_ACSFailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TsapiServer/setMonitorDeviceSYSFailFault" name="SYSFailFault" message="tns:TsapiServer_setMonitorDevice_SYSFailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnReady">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnReady" message="tns:TsapiServer_OnReady_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnNotReady">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnNotReady" message="tns:TsapiServer_OnNotReady_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnAftCall">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnAftCall" message="tns:TsapiServer_OnAftCall_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnLogin">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnLogin" message="tns:TsapiServer_OnLogin_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnLoginDevice">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnLoginDevice" message="tns:TsapiServer_OnLoginDevice_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnLogout">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnLogout" message="tns:TsapiServer_OnLogout_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnLogoutDevice">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnLogoutDevice" message="tns:TsapiServer_OnLogoutDevice_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnCallCleared">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnCallCleared" message="tns:TsapiServer_OnCallCleared_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnConferenced">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnConferenced" message="tns:TsapiServer_OnConferenced_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnConnectionCleared">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnConnectionCleared" message="tns:TsapiServer_OnConnectionCleared_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnDelivered">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnDelivered" message="tns:TsapiServer_OnDelivered_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnDiverted">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnDiverted" message="tns:TsapiServer_OnDiverted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnEstablished">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnEstablished" message="tns:TsapiServer_OnEstablished_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnFailed">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnFailed" message="tns:TsapiServer_OnFailed_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnHeld">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnHeld" message="tns:TsapiServer_OnHeld_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnNetworkReached">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnNetworkReached" message="tns:TsapiServer_OnNetworkReached_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnOriginated">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnOriginated" message="tns:TsapiServer_OnOriginated_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnQueued">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnQueued" message="tns:TsapiServer_OnQueued_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnRetrieved">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnRetrieved" message="tns:TsapiServer_OnRetrieved_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnServiceInitiated">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnServiceInitiated" message="tns:TsapiServer_OnServiceInitiated_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnTransferred">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnTransferred" message="tns:TsapiServer_OnTransferred_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnCallInformation">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnCallInformation" message="tns:TsapiServer_OnCallInformation_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnDoNotDisturb">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnDoNotDisturb" message="tns:TsapiServer_OnDoNotDisturb_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnForwarding">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnForwarding" message="tns:TsapiServer_OnForwarding_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnMessageWaiting">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnMessageWaiting" message="tns:TsapiServer_OnMessageWaiting_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnBackInService">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnBackInService" message="tns:TsapiServer_OnBackInService_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnOutOfService">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnOutOfService" message="tns:TsapiServer_OnOutOfService_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnPrivateStatus">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnPrivateStatus" message="tns:TsapiServer_OnPrivateStatus_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="OnMonitorEnded">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/OnMonitorEnded" message="tns:TsapiServer_OnMonitorEnded_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ServerFail">
+      <wsdl:output wsaw:Action="http://tempuri.org/TsapiServer/ServerFail" message="tns:TsapiServer_ServerFail_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_TsapiServer" type="tns:TsapiServer">
+    <wsp:PolicyReference URI="#NetTcpBinding_TsapiServer_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getQueryDeviceInfo">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/getQueryDeviceInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueryLastNumber">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/getQueryLastNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueryAgentState">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/getQueryAgentState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueryMsgWaitingInd">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/getQueryMsgWaitingInd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueryStationStatus">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/getQueryStationStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueryUCID">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/getQueryUCID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setAgentState">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setAgentState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setAlternateCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setAlternateCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setAnswerCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setAnswerCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setCallCompletion">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setCallCompletion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setChangeMonitorFilter">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setChangeMonitorFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setClearCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setClearCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setClearConnection">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setClearConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setConferenceCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setConferenceCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setConsultationCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setConsultationCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setDeflectCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setDeflectCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setGroupPickupCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setGroupPickupCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setHoldCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setHoldCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setMakeCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setMakeCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setMakePredictiveCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setMakePredictiveCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setMonitorStop">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setMonitorStop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setPickupCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setPickupCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setQueryCallMonitor">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setQueryCallMonitor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setReconnectCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setReconnectCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setRetrieveCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setRetrieveCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setSendDTMFTone">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setSendDTMFTone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setSetMsgWaitingInd">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setSetMsgWaitingInd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setSnapshotCallReq">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setSnapshotCallReq" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setSnapshotDeviceReq">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setSnapshotDeviceReq" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setTransferCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setTransferCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExeptionFault">
+        <soap12:fault use="literal" name="ExeptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueryAcdSplit">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/getQueryAcdSplit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExeptionFault">
+        <soap12:fault use="literal" name="ExeptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueryAgentLogin">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/getQueryAgentLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExeptionFault">
+        <soap12:fault use="literal" name="ExeptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setMonitorCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setMonitorCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setMonitorCallsViaDevice">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setMonitorCallsViaDevice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setMonitorDevice">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/setMonitorDevice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CSTAFailFault">
+        <soap12:fault use="literal" name="CSTAFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ACSFailFault">
+        <soap12:fault use="literal" name="ACSFailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SYSFailFault">
+        <soap12:fault use="literal" name="SYSFailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnReady">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnReady" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnNotReady">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnNotReady" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnAftCall">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnAftCall" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnLogin">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnLogin" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnLoginDevice">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnLoginDevice" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnLogout">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnLogout" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnLogoutDevice">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnLogoutDevice" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnCallCleared">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnCallCleared" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnConferenced">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnConferenced" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnConnectionCleared">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnConnectionCleared" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnDelivered">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnDelivered" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnDiverted">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnDiverted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnEstablished">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnEstablished" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnFailed">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnFailed" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnHeld">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnHeld" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnNetworkReached">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnNetworkReached" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnOriginated">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnOriginated" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnQueued">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnQueued" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnRetrieved">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnRetrieved" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnServiceInitiated">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnServiceInitiated" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnTransferred">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnTransferred" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnCallInformation">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnCallInformation" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnDoNotDisturb">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnDoNotDisturb" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnForwarding">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnForwarding" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnMessageWaiting">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnMessageWaiting" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnBackInService">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnBackInService" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnOutOfService">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnOutOfService" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnPrivateStatus">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnPrivateStatus" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnMonitorEnded">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/OnMonitorEnded" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerFail">
+      <soap12:operation soapAction="http://tempuri.org/TsapiServer/ServerFail" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TsapiServer">
+    <wsdl:port name="NetTcpBinding_TsapiServer" binding="tns:NetTcpBinding_TsapiServer">
+      <soap12:address location="net.tcp://172.16.0.201:9889/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://172.16.0.201:9889/</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TSAPILIB2" />
+  <xs:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="getQueryDeviceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryDeviceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="getQueryDeviceInfoResult" type="q1:QueryDeviceInfoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryLastNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryLastNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="getQueryLastNumberResult" type="q2:QueryLastNumberEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryAgentState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryAgentStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="getQueryAgentStateResult" type="q3:QueryAgentStateEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryMsgWaitingInd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryMsgWaitingIndResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="getQueryMsgWaitingIndResult" type="q4:QueryMsgWaitingEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryStationStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryStationStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="getQueryStationStatusResult" type="q5:QueryStationStatusEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryUCID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="call" type="q6:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryUCIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="getQueryUCIDResult" type="q7:QueryUcidEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setAgentState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="agentID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="agentGroup" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="mode" type="q8:AgentMode_t" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="wmode" type="q9:ATTWorkMode_t" />
+        <xs:element minOccurs="0" name="reasonCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setAgentStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setAgentStateResult" nillable="true" type="q10:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setAlternateCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="activeCall" type="q11:ConnectionID_t" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="otherCall" type="q12:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setAlternateCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setAlternateCallResult" nillable="true" type="q13:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setAnswerCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="allertingCall" type="q14:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setAnswerCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setAnswerCallResult" nillable="true" type="q15:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setCallCompletion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="call" type="q16:ConnectionID_t" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="feature" type="q17:Feature_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setCallCompletionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setCallCompletionResult" nillable="true" type="q18:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setChangeMonitorFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monitorCrossId" type="xs:unsignedInt" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="filter" type="q19:CSTAMonitorFilter_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setChangeMonitorFilterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setChangeMonitorFilterResult" type="q20:ChangeMonitorFilterEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setClearCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="call" type="q21:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setClearCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setClearCallResult" nillable="true" type="q22:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setClearConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="call" type="q23:ConnectionID_t" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="resourse" type="q24:ATTDropResource_t" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setClearConnectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setClearConnectionResult" nillable="true" type="q25:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setConferenceCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="activeCall" type="q26:ConnectionID_t" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="otherCall" type="q27:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setConferenceCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setConferenceCallResult" type="q28:ConferenceCallEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setConsultationCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="activeCall" type="q29:ConnectionID_t" />
+        <xs:element minOccurs="0" name="calledDevice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="destRoute" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priorityCalling" type="xs:boolean" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setConsultationCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setConsultationCallResult" type="q30:ConsultationCallEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setDeflectCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="deflectCall" type="q31:ConnectionID_t" />
+        <xs:element minOccurs="0" name="calledDevice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setDeflectCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setDeflectCallResult" nillable="true" type="q32:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setGroupPickupCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="deflectCall" type="q33:ConnectionID_t" />
+        <xs:element minOccurs="0" name="pickupDevice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setGroupPickupCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setGroupPickupCallResult" nillable="true" type="q34:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setHoldCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="activeCall" type="q35:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setHoldCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setHoldCallResult" nillable="true" type="q36:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMakeCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingDevice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="calledDevice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="destroute" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priorityCall" type="xs:boolean" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMakeCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setMakeCallResult" type="q37:MakeCallEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMakePredictiveCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingDevice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="calledDevice" nillable="true" type="xs:string" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="allocationState" type="q38:AllocationState_t" />
+        <xs:element minOccurs="0" name="destRoute" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priorityCalling" type="xs:boolean" />
+        <xs:element minOccurs="0" name="maxRing" type="xs:short" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="answerTreat" type="q39:ATTAnswerTreat_t" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMakePredictiveCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setMakePredictiveCallResult" type="q40:MakePredictiveCallEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMonitorStop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monitorCrossId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMonitorStopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setMonitorStopResult" nillable="true" type="q41:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setPickupCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="deflectCall" type="q42:ConnectionID_t" />
+        <xs:element minOccurs="0" name="calledDevice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setPickupCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setPickupCallResult" nillable="true" type="q43:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setQueryCallMonitor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setQueryCallMonitorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setQueryCallMonitorResult" type="q44:QueryCallMonitorEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setReconnectCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="activeCall" type="q45:ConnectionID_t" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="heldCall" type="q46:ConnectionID_t" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="resource" type="q47:ATTDropResource_t" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setReconnectCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setReconnectCallResult" nillable="true" type="q48:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setRetrieveCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="heldCall" type="q49:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setRetrieveCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setRetrieveCallResult" nillable="true" type="q50:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSendDTMFTone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="call" type="q51:ConnectionID_t" />
+        <xs:element minOccurs="0" name="tone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pauseDuartion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSendDTMFToneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setSendDTMFToneResult" nillable="true" type="q52:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSetMsgWaitingInd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSetMsgWaitingIndResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setSetMsgWaitingIndResult" nillable="true" type="q53:NullTsapiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSnapshotCallReq">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="call" type="q54:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSnapshotCallReqResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setSnapshotCallReqResult" type="q55:SnapshotCallEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSnapshotDeviceReq">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSnapshotDeviceReqResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setSnapshotDeviceReqResult" type="q56:SnapshotDeviceEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setTransferCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="activeCall" type="q57:ConnectionID_t" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="heldCall" type="q58:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setTransferCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="setTransferCallResult" type="q59:TransferCallEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryAcdSplit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryAcdSplitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="getQueryAcdSplitResult" type="q60:QueryAcdSplitEventReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryAgentLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQueryAgentLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getQueryAgentLoginResult" nillable="true" type="q61:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMonitorCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="call" type="q62:ConnectionID_t" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMonitorCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setMonitorCallResult" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMonitorCallsViaDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMonitorCallsViaDeviceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setMonitorCallsViaDeviceResult" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMonitorDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMonitorDeviceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setMonitorDeviceResult" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnReady">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agent" nillable="true" type="xs:string" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="arg" type="q63:ATTQueryAgentStateConfEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnNotReady">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agent" nillable="true" type="xs:string" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="arg" type="q64:ATTQueryAgentStateConfEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnAftCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agent" nillable="true" type="xs:string" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="arg" type="q65:ATTQueryAgentStateConfEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnLoginDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="arg" type="q66:CSTALoggedOnEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnLogout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnLogoutDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="agent" type="q67:CSTALoggedOffEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnCallCleared">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q68:CSTACallClearedEvent_t" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q69:ATTCallClearedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnConferenced">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q70:CSTAConferencedEvent_t" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q71:ATTConferencedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnConnectionCleared">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q72:CSTAConnectionClearedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnDelivered">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q73:CSTADeliveredEvent_t" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q74:ATTDeliveredEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnDiverted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q75:CSTADivertedEvent_t" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q76:ATTDivertedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnEstablished">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q77:CSTAEstablishedEvent_t" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q78:ATTEstablishedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnFailed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q79:CSTAFailedEvent_t" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q80:ATTFailedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnHeld">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q81:CSTAHeldEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnNetworkReached">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q82:CSTANetworkReachedEvent_t" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q83:ATTNetworkReachedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnOriginated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q84:CSTAOriginatedEvent_t" />
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q85:ATTOriginatedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnQueued">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q86:CSTAQueuedEvent_t" />
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q87:ATTQueuedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnRetrieved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q88:CSTARetrievedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnServiceInitiated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q89:CSTAServiceInitiatedEvent_t" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q90:ATTServiceInitiatedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnTransferred">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q91:CSTATransferredEvent_t" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="att" type="q92:ATTTransferredEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnCallInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q93:CSTACallInformationEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnDoNotDisturb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q94:CSTADoNotDisturbEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnForwarding">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q95:CSTAForwardingEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnMessageWaiting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q96:CSTAMessageWaitingEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnBackInService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q97:CSTABackInServiceEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnOutOfService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q98:CSTAOutOfServiceEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnPrivateStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q99:CSTAPrivateStatusEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnMonitorEnded">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="csta" type="q100:CSTAMonitorEndedEvent_t" />
+        <xs:element minOccurs="0" name="monId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServerFail">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

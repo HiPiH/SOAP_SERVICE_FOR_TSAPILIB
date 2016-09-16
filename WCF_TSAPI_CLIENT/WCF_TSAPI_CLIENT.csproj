@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB40A4FD-2635-4E68-A006-3B426FF70D85}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WCF_TSAPI_CLIENT</RootNamespace>
+    <AssemblyName>WCF_TSAPI_CLIENT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\OrangeRecordTsapiMonitoring\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSTAExeption.cs" />
+    <Compile Include="Monitors\TsapiMonitor.cs" />
+    <Compile Include="Monitors\TsapiMonitors.cs" />
+    <Compile Include="Service References\TsapiServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WcfProxy.cs" />
+    <Compile Include="WcfTsapiClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\TsapiServer\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TsapiServer\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TsapiServer\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TsapiServer\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TsapiServer\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TsapiServer\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TsapiServer\TsapiServer.wsdl" />
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.ChangeMonitorFilterEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.ConferenceCallEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.ConsultationCallEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.getQueryAcdSplitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.getQueryAgentLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.getQueryAgentStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.getQueryDeviceInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.getQueryLastNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.getQueryMsgWaitingIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.getQueryStationStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.MakeCallEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.MakePredictiveCallEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.NullTsapiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.QueryAcdSplitEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.QueryAgentStateEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.QueryCallMonitorEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.QueryDeviceInfoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.QueryLastNumberEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.QueryMsgWaitingEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.QueryStationStatusEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.QueryUcidEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setAgentStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setAlternateCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setAnswerCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setCallCompletionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setClearCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setClearConnectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setConsultationCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setDeflectCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setGroupPickupCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setHoldCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setMakeCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setMakePredictiveCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setMonitorCallsViaDeviceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setMonitorDeviceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setMonitorStopResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setPickupCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setQueryCallMonitorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setReconnectCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setRetrieveCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setSendDTMFToneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setSetMsgWaitingIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.setSnapshotDeviceReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.SnapshotCallEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.SnapshotDeviceEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TsapiServer\WCF_TSAPI_CLIENT.TsapiServer.TransferCallEventReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TsapiServer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TsapiServer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TsapiServer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TsapiServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TsapiServer\item.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

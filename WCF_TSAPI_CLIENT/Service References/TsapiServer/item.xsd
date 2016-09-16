@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF_TSAPI_SERVER" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TSAPILIB2" />
+  <xs:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="CSTAFail">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="CustomError" type="q1:CSTAUniversalFailure_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAFail" nillable="true" type="tns:CSTAFail" />
+  <xs:complexType name="ACSFail">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TSAPILIB2" minOccurs="0" name="CustomError" type="q2:ACSFunctionRet_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACSFail" nillable="true" type="tns:ACSFail" />
+  <xs:complexType name="SYSFail">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CustomError" nillable="true" type="q3:Exception" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSFail" nillable="true" type="tns:SYSFail" />
+</xs:schema>

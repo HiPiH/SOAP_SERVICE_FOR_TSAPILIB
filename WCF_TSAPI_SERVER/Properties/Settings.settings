@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WCF_TSAPI_SERVER.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="login" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tsuser</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tsuser</Value>
+    </Setting>
+    <Setting Name="version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ECS#2-7</Value>
+    </Setting>
+    <Setting Name="admin_login" Type="System.String" Scope="User">
+      <Value Profile="(Default)">admin</Value>
+    </Setting>
+    <Setting Name="admin_password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">admin</Value>
+    </Setting>
+    <Setting Name="max_request" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="service_port" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9888</Value>
+    </Setting>
+    <Setting Name="api" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TS1-2</Value>
+    </Setting>
+    <Setting Name="ip_server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.15.203</Value>
+    </Setting>
+    <Setting Name="ip_test" Type="System.String" Scope="User">
+      <Value Profile="(Default)">172.16.0.201</Value>
+    </Setting>
+    <Setting Name="server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">AVAYA#CCAES6#CSTA#CCAES6</Value>
+    </Setting>
+    <Setting Name="service_name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">WCF_TSAPI_SERVER_V2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

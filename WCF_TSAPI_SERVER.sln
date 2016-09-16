@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF_TSAPI_SERVER", "WCF_TSAPI_SERVER\WCF_TSAPI_SERVER.csproj", "{D4902B79-369B-47B5-B318-CF41FC1E4414}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSAPILIB2", "..\TSAPILIB2\TSAPILIB2\TSAPILIB2.csproj", "{3C92F9AD-FF5B-496E-BA57-E013FD054E9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4902B79-369B-47B5-B318-CF41FC1E4414}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D4902B79-369B-47B5-B318-CF41FC1E4414}.Debug|x86.ActiveCfg = Debug|x86
+		{D4902B79-369B-47B5-B318-CF41FC1E4414}.Debug|x86.Build.0 = Debug|x86
+		{D4902B79-369B-47B5-B318-CF41FC1E4414}.Release|Any CPU.ActiveCfg = Release|x86
+		{D4902B79-369B-47B5-B318-CF41FC1E4414}.Release|x86.ActiveCfg = Release|x86
+		{D4902B79-369B-47B5-B318-CF41FC1E4414}.Release|x86.Build.0 = Release|x86
+		{3C92F9AD-FF5B-496E-BA57-E013FD054E9F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3C92F9AD-FF5B-496E-BA57-E013FD054E9F}.Debug|x86.ActiveCfg = Debug|x86
+		{3C92F9AD-FF5B-496E-BA57-E013FD054E9F}.Debug|x86.Build.0 = Debug|x86
+		{3C92F9AD-FF5B-496E-BA57-E013FD054E9F}.Release|Any CPU.ActiveCfg = Release|x86
+		{3C92F9AD-FF5B-496E-BA57-E013FD054E9F}.Release|x86.ActiveCfg = Release|x86
+		{3C92F9AD-FF5B-496E-BA57-E013FD054E9F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.15.213:8080/tfs/application
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WCF_TSAPI_SERVER\\WCF_TSAPI_SERVER.csproj
+		SccProjectName1 = WCF_TSAPI_SERVER
+		SccLocalPath1 = WCF_TSAPI_SERVER
+		SccProjectUniqueName2 = ..\\TSAPILIB2\\TSAPILIB2\\TSAPILIB2.csproj
+		SccProjectName2 = ../../TSAPILIB2/TSAPILIB2/TSAPILIB2
+		SccLocalPath2 = ..\\TSAPILIB2\\TSAPILIB2
+	EndGlobalSection
+EndGlobal

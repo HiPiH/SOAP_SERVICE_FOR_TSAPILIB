@@ -1,0 +1,2878 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TSAPILIB2" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TSAPILIB2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://172.16.0.201:9888/?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="QueryDeviceInfoReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTQueryDeviceInfoConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAQueryDeviceInfoConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryDeviceInfoReturn" nillable="true" type="tns:QueryDeviceInfoReturn" />
+  <xs:complexType name="ATTQueryDeviceInfoConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="associatedClass" type="tns:ATTExtensionClass_t" />
+      <xs:element name="associatedDevice" nillable="true" type="xs:string" />
+      <xs:element name="extensionClass" type="tns:ATTExtensionClass_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTQueryDeviceInfoConfEvent_t" nillable="true" type="tns:ATTQueryDeviceInfoConfEvent_t" />
+  <xs:simpleType name="ATTExtensionClass_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ecVdn" />
+      <xs:enumeration value="ecAcdSplit" />
+      <xs:enumeration value="ecAnnouncement" />
+      <xs:enumeration value="ecData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecAnalog">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecProprietary">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecBri">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCti">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecLogicalAgent">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecOther">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTExtensionClass_t" nillable="true" type="tns:ATTExtensionClass_t" />
+  <xs:complexType name="CSTAQueryDeviceInfoConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="device" nillable="true" type="xs:string" />
+      <xs:element name="deviceClass" type="tns:DeviceClass_t" />
+      <xs:element name="deviceType" type="tns:DeviceType_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAQueryDeviceInfoConfEvent_t" nillable="true" type="tns:CSTAQueryDeviceInfoConfEvent_t" />
+  <xs:simpleType name="DeviceClass_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DC_VOICE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DC_DATA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DC_IMAGE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DC_OTHER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeviceClass_t" nillable="true" type="tns:DeviceClass_t" />
+  <xs:simpleType name="DeviceType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="dtStation" />
+      <xs:enumeration value="dtLine" />
+      <xs:enumeration value="dtButton" />
+      <xs:enumeration value="dtAcd" />
+      <xs:enumeration value="dtTrunk" />
+      <xs:enumeration value="dtOperator" />
+      <xs:enumeration value="dtStationGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dtLineGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dtButtonGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dtAcdGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dtTrunkGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dtOperatorGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dtOther">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">255</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeviceType_t" nillable="true" type="tns:DeviceType_t" />
+  <xs:simpleType name="CSTAUniversalFailure_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="genericUnspecified" />
+      <xs:enumeration value="genericOperation" />
+      <xs:enumeration value="requestIncompatibleWithObject" />
+      <xs:enumeration value="valueOutOfRange" />
+      <xs:enumeration value="objectNotKnown" />
+      <xs:enumeration value="invalidCallingDevice" />
+      <xs:enumeration value="invalidCalledDevice" />
+      <xs:enumeration value="invalidForwardingDestination" />
+      <xs:enumeration value="privilegeViolationOnSpecifiedDevice" />
+      <xs:enumeration value="privilegeViolationOnCalledDevice" />
+      <xs:enumeration value="privilegeViolationOnCallingDevice" />
+      <xs:enumeration value="invalidCstaCallIdentifier" />
+      <xs:enumeration value="invalidCstaDeviceIdentifier" />
+      <xs:enumeration value="invalidCstaConnectionIdentifier" />
+      <xs:enumeration value="invalidDestination" />
+      <xs:enumeration value="invalidFeature" />
+      <xs:enumeration value="invalidAllocationState" />
+      <xs:enumeration value="invalidCrossRefId" />
+      <xs:enumeration value="invalidObjectType" />
+      <xs:enumeration value="securityViolation" />
+      <xs:enumeration value="genericStateIncompatibility">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="invalidObjectState">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="invalidConnectionIdForActiveCall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noActiveCall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noHeldCall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noCallToClear">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noConnectionToClear">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">27</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noCallToAnswer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">28</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noCallToComplete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">29</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="genericSystemResourceAvailability">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="serviceBusy">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="resourceBusy">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="resourceOutOfService">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="networkBusy">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">35</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="networkOutOfService">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">36</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="overallMonitorLimitExceeded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">37</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="conferenceMemberLimitExceeded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">38</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="genericSubscribedResourceAvailability">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">41</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="objectMonitorLimitExceeded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">42</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="externalTrunkLimitExceeded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">43</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="outstandingRequestLimitExceeded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">44</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="genericPerformanceManagement">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">51</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="performanceLimitExceeded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unspecifiedSecurityError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sequenceNumberViolated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">61</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="timeStampViolated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">62</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pacViolated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">63</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sealViolated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="genericUnspecifiedRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="genericOperationRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="duplicateInvocationRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">72</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unrecognizedOperationRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mistypedArgumentRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">74</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="resourceLimitationRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">75</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="acsHandleTerminationRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="serviceTerminationRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="requestTimeoutRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="requestsOnDeviceExceededRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unrecognizedApduRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mistypedApduRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">81</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="badlyStructuredApduRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="initiatorReleasingRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unrecognizedLinkedidRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="linkedResponseUnexpectedRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">85</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unexpectedChildOperationRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">86</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mistypedResultRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">87</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unrecognizedErrorRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">88</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unexpectedErrorRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">89</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mistypedParameterRejection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">90</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nonStandard">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="operationTimeout">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CBTaskIsFull">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">102</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="allOK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">999</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CSTAUniversalFailure_t" nillable="true" type="tns:CSTAUniversalFailure_t" />
+  <xs:simpleType name="ACSFunctionRet_t">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ACSFunctionRet_t" nillable="true" type="tns:ACSFunctionRet_t" />
+  <xs:complexType name="QueryLastNumberEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAQueryLastNumberConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryLastNumberEventReturn" nillable="true" type="tns:QueryLastNumberEventReturn" />
+  <xs:complexType name="CSTAQueryLastNumberConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="lastNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAQueryLastNumberConfEvent_t" nillable="true" type="tns:CSTAQueryLastNumberConfEvent_t" />
+  <xs:complexType name="QueryAgentStateEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTQueryAgentStateConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAQueryAgentStateConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryAgentStateEventReturn" nillable="true" type="tns:QueryAgentStateEventReturn" />
+  <xs:complexType name="ATTQueryAgentStateConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="pendingReasonCode" type="xs:int" />
+      <xs:element name="pendingWorkMode" type="tns:ATTWorkMode_t" />
+      <xs:element name="reasonCode" type="xs:int" />
+      <xs:element name="talkState" type="tns:ATTTalkState_t" />
+      <xs:element name="workMode" type="tns:ATTWorkMode_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTQueryAgentStateConfEvent_t" nillable="true" type="tns:ATTQueryAgentStateConfEvent_t" />
+  <xs:simpleType name="ATTWorkMode_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="wmNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="wmAuxWork" />
+      <xs:enumeration value="wmAftcalWk" />
+      <xs:enumeration value="wmAutoIn" />
+      <xs:enumeration value="wmManualIn" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTWorkMode_t" nillable="true" type="tns:ATTWorkMode_t" />
+  <xs:simpleType name="ATTTalkState_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="tsOnCall" />
+      <xs:enumeration value="tsIdle" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTTalkState_t" nillable="true" type="tns:ATTTalkState_t" />
+  <xs:complexType name="CSTAQueryAgentStateConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="agentState" type="tns:AgentState_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAQueryAgentStateConfEvent_t" nillable="true" type="tns:CSTAQueryAgentStateConfEvent_t" />
+  <xs:simpleType name="AgentState_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="agNotReady" />
+      <xs:enumeration value="agNull" />
+      <xs:enumeration value="agReady" />
+      <xs:enumeration value="agWorkNotReady" />
+      <xs:enumeration value="agWorkReady" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AgentState_t" nillable="true" type="tns:AgentState_t" />
+  <xs:complexType name="QueryMsgWaitingEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTQueryMwiConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAQueryMwiConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryMsgWaitingEventReturn" nillable="true" type="tns:QueryMsgWaitingEventReturn" />
+  <xs:complexType name="ATTQueryMwiConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="applicationType" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTQueryMwiConfEvent_t" nillable="true" type="tns:ATTQueryMwiConfEvent_t" />
+  <xs:complexType name="CSTAQueryMwiConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="messages" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAQueryMwiConfEvent_t" nillable="true" type="tns:CSTAQueryMwiConfEvent_t" />
+  <xs:complexType name="QueryStationStatusEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTQueryStationStatusConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryStationStatusEventReturn" nillable="true" type="tns:QueryStationStatusEventReturn" />
+  <xs:complexType name="ATTQueryStationStatusConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="stationStatus" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTQueryStationStatusConfEvent_t" nillable="true" type="tns:ATTQueryStationStatusConfEvent_t" />
+  <xs:complexType name="ConnectionID_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callID" type="xs:int" />
+      <xs:element name="devIDType" type="tns:ConnectionID_Device_t" />
+      <xs:element name="deviceID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectionID_t" nillable="true" type="tns:ConnectionID_t" />
+  <xs:simpleType name="ConnectionID_Device_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="staticId" />
+      <xs:enumeration value="dynamicId" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConnectionID_Device_t" nillable="true" type="tns:ConnectionID_Device_t" />
+  <xs:complexType name="QueryUcidEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTQueryUcidConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryUcidEventReturn" nillable="true" type="tns:QueryUcidEventReturn" />
+  <xs:complexType name="ATTQueryUcidConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTQueryUcidConfEvent_t" nillable="true" type="tns:ATTQueryUcidConfEvent_t" />
+  <xs:simpleType name="AgentMode_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="amLogIn" />
+      <xs:enumeration value="amLogOut" />
+      <xs:enumeration value="amNotReady" />
+      <xs:enumeration value="amReady" />
+      <xs:enumeration value="amWorkNotReady" />
+      <xs:enumeration value="amWorkReady" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AgentMode_t" nillable="true" type="tns:AgentMode_t" />
+  <xs:complexType name="NullTsapiReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Case" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NullTsapiReturn" nillable="true" type="tns:NullTsapiReturn" />
+  <xs:simpleType name="Feature_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ftCampOn" />
+      <xs:enumeration value="ftCallBack" />
+      <xs:enumeration value="ftIntrude" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Feature_t" nillable="true" type="tns:Feature_t" />
+  <xs:complexType name="CSTAMonitorFilter_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="agent" type="tns:CSTAAgentFilter_t" />
+      <xs:element name="call" type="tns:CSTACallFilter_t" />
+      <xs:element name="feature" type="tns:CSTAFeatureFilter_t" />
+      <xs:element name="maintenance" type="tns:CSTAMaintenanceFilter_t" />
+      <xs:element name="privateFilter" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAMonitorFilter_t" nillable="true" type="tns:CSTAMonitorFilter_t" />
+  <xs:simpleType name="CSTAAgentFilter_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="afLoggedOn">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="afLoggedOff">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="afNotReady">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="afReady">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="afWorkNotReady">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="afWorkReady">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CSTAAgentFilter_t" nillable="true" type="tns:CSTAAgentFilter_t" />
+  <xs:simpleType name="CSTACallFilter_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedShort" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cfCallCleared">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32768</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfConferenced">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16384</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfConnectionCleared">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8192</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfDelivered">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4096</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfDiverted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2048</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfEstablished">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfFailed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">512</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfHeld">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">256</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfNetworkReached">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfOriginated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfQueued">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfRetrieved">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfServiceInitiated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfTransferred">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CSTACallFilter_t" nillable="true" type="tns:CSTACallFilter_t" />
+  <xs:simpleType name="CSTAFeatureFilter_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ffCallInformation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ffDoNotDisturb">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ffForwarding">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ffMessageWaiting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CSTAFeatureFilter_t" nillable="true" type="tns:CSTAFeatureFilter_t" />
+  <xs:simpleType name="CSTAMaintenanceFilter_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="mfBackInService">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mfOutOfService">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CSTAMaintenanceFilter_t" nillable="true" type="tns:CSTAMaintenanceFilter_t" />
+  <xs:complexType name="ChangeMonitorFilterEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAChangeMonitorFilterConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeMonitorFilterEventReturn" nillable="true" type="tns:ChangeMonitorFilterEventReturn" />
+  <xs:complexType name="CSTAChangeMonitorFilterConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="monitorFilter" type="tns:CSTAMonitorFilter_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAChangeMonitorFilterConfEvent_t" nillable="true" type="tns:CSTAChangeMonitorFilterConfEvent_t" />
+  <xs:simpleType name="ATTDropResource_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="drNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="drCallClassifier">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="drToneGenerator">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTDropResource_t" nillable="true" type="tns:ATTDropResource_t" />
+  <xs:complexType name="ConferenceCallEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTConferenceCallConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAConferenceCallConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConferenceCallEventReturn" nillable="true" type="tns:ConferenceCallEventReturn" />
+  <xs:complexType name="ATTConferenceCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTConferenceCallConfEvent_t" nillable="true" type="tns:ATTConferenceCallConfEvent_t" />
+  <xs:complexType name="CSTAConferenceCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="connList" type="tns:ConnectionList_t" />
+      <xs:element name="newCall" type="tns:ConnectionID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAConferenceCallConfEvent_t" nillable="true" type="tns:CSTAConferenceCallConfEvent_t" />
+  <xs:complexType name="ConnectionList_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="count" type="xs:unsignedInt" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" name="point" type="q1:IntPtr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectionList_t" nillable="true" type="tns:ConnectionList_t" />
+  <xs:complexType name="ConsultationCallEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTConsultationCallConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAConsultationCallConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultationCallEventReturn" nillable="true" type="tns:ConsultationCallEventReturn" />
+  <xs:complexType name="ATTConsultationCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTConsultationCallConfEvent_t" nillable="true" type="tns:ATTConsultationCallConfEvent_t" />
+  <xs:complexType name="CSTAConsultationCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="newCall" type="tns:ConnectionID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAConsultationCallConfEvent_t" nillable="true" type="tns:CSTAConsultationCallConfEvent_t" />
+  <xs:complexType name="MakeCallEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTMakeCallConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAMakeCallConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MakeCallEventReturn" nillable="true" type="tns:MakeCallEventReturn" />
+  <xs:complexType name="ATTMakeCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTMakeCallConfEvent_t" nillable="true" type="tns:ATTMakeCallConfEvent_t" />
+  <xs:complexType name="CSTAMakeCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="newCall" type="tns:ConnectionID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAMakeCallConfEvent_t" nillable="true" type="tns:CSTAMakeCallConfEvent_t" />
+  <xs:simpleType name="AllocationState_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="asCallDelivered" />
+      <xs:enumeration value="asCallEstablished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AllocationState_t" nillable="true" type="tns:AllocationState_t" />
+  <xs:simpleType name="ATTAnswerTreat_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="atNoTreatment" />
+      <xs:enumeration value="atNone" />
+      <xs:enumeration value="atDrop" />
+      <xs:enumeration value="atConnect" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTAnswerTreat_t" nillable="true" type="tns:ATTAnswerTreat_t" />
+  <xs:complexType name="MakePredictiveCallEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTMakePredictiveCallConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAMakePredictiveCallConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MakePredictiveCallEventReturn" nillable="true" type="tns:MakePredictiveCallEventReturn" />
+  <xs:complexType name="ATTMakePredictiveCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTMakePredictiveCallConfEvent_t" nillable="true" type="tns:ATTMakePredictiveCallConfEvent_t" />
+  <xs:complexType name="CSTAMakePredictiveCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="newCall" type="tns:ConnectionID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAMakePredictiveCallConfEvent_t" nillable="true" type="tns:CSTAMakePredictiveCallConfEvent_t" />
+  <xs:complexType name="QueryCallMonitorEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTAQueryCallMonitorConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryCallMonitorEventReturn" nillable="true" type="tns:QueryCallMonitorEventReturn" />
+  <xs:complexType name="CSTAQueryCallMonitorConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callMonitor" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAQueryCallMonitorConfEvent_t" nillable="true" type="tns:CSTAQueryCallMonitorConfEvent_t" />
+  <xs:complexType name="SnapshotCallEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTSnapshotCallConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTASnapshotCallConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SnapshotCallEventReturn" nillable="true" type="tns:SnapshotCallEventReturn" />
+  <xs:complexType name="ATTSnapshotCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTSnapshotCallConfEvent_t" nillable="true" type="tns:ATTSnapshotCallConfEvent_t" />
+  <xs:complexType name="DeviceHistory_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="count" type="xs:unsignedInt" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" name="point" type="q2:IntPtr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeviceHistory_t" nillable="true" type="tns:DeviceHistory_t" />
+  <xs:complexType name="CSTASnapshotCallConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="snapshotData" type="tns:CSTASnapshotCallData_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTASnapshotCallConfEvent_t" nillable="true" type="tns:CSTASnapshotCallConfEvent_t" />
+  <xs:complexType name="CSTASnapshotCallData_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="count" type="xs:unsignedInt" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" name="point" type="q3:IntPtr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTASnapshotCallData_t" nillable="true" type="tns:CSTASnapshotCallData_t" />
+  <xs:complexType name="SnapshotDeviceEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" nillable="true" type="tns:ATTSnapshotDeviceConfEvent_t" />
+      <xs:element minOccurs="0" name="Csta" type="tns:CSTASnapshotDeviceConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SnapshotDeviceEventReturn" nillable="true" type="tns:SnapshotDeviceEventReturn" />
+  <xs:complexType name="ATTSnapshotDeviceConfEvent_t">
+    <xs:sequence>
+      <xs:element name="count" type="xs:long" />
+      <xs:element name="list" nillable="true" type="tns:ArrayOfATTSnapshotDevice_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTSnapshotDeviceConfEvent_t" nillable="true" type="tns:ATTSnapshotDeviceConfEvent_t" />
+  <xs:complexType name="ArrayOfATTSnapshotDevice_t">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ATTSnapshotDevice_t" type="tns:ATTSnapshotDevice_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfATTSnapshotDevice_t" nillable="true" type="tns:ArrayOfATTSnapshotDevice_t" />
+  <xs:complexType name="ATTSnapshotDevice_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="call" type="tns:ConnectionID_t" />
+      <xs:element name="state" type="tns:ATTLocalCallState_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTSnapshotDevice_t" nillable="true" type="tns:ATTSnapshotDevice_t" />
+  <xs:simpleType name="ATTLocalCallState_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="attNone" />
+      <xs:enumeration value="attCsInitiated" />
+      <xs:enumeration value="attCsAlerting" />
+      <xs:enumeration value="attCsConnected" />
+      <xs:enumeration value="attCsHeld" />
+      <xs:enumeration value="attCsBridged" />
+      <xs:enumeration value="attCsOther" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTLocalCallState_t" nillable="true" type="tns:ATTLocalCallState_t" />
+  <xs:complexType name="CSTASnapshotDeviceConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="snapshotData" type="tns:CSTASnapshotDeviceData_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTASnapshotDeviceConfEvent_t" nillable="true" type="tns:CSTASnapshotDeviceConfEvent_t" />
+  <xs:complexType name="CSTASnapshotDeviceData_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="count" type="xs:unsignedInt" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" name="point" type="q4:IntPtr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTASnapshotDeviceData_t" nillable="true" type="tns:CSTASnapshotDeviceData_t" />
+  <xs:complexType name="TransferCallEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="TransferCallEventReturn" nillable="true" type="tns:TransferCallEventReturn" />
+  <xs:complexType name="Exeption">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System" base="q5:Exception" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Exeption" nillable="true" type="tns:Exeption" />
+  <xs:complexType name="QueryAcdSplitEventReturn">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Att" type="tns:ATTQueryAcdSplitConfEvent_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryAcdSplitEventReturn" nillable="true" type="tns:QueryAcdSplitEventReturn" />
+  <xs:complexType name="ATTQueryAcdSplitConfEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="agentsLoggedIn" type="xs:short" />
+      <xs:element name="availableAgents" type="xs:short" />
+      <xs:element name="callsInQueue" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTQueryAcdSplitConfEvent_t" nillable="true" type="tns:ATTQueryAcdSplitConfEvent_t" />
+  <xs:complexType name="CSTALoggedOnEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="agentDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="agentGroup" nillable="true" type="xs:string" />
+      <xs:element name="agentID" nillable="true" type="xs:string" />
+      <xs:element name="password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTALoggedOnEvent_t" nillable="true" type="tns:CSTALoggedOnEvent_t" />
+  <xs:complexType name="ExtendedDeviceID_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceID" nillable="true" type="xs:string" />
+      <xs:element name="deviceIDStatus" type="tns:DeviceIDStatus_t" />
+      <xs:element name="deviceIDType" type="tns:DeviceIDType_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtendedDeviceID_t" nillable="true" type="tns:ExtendedDeviceID_t" />
+  <xs:simpleType name="DeviceIDStatus_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="idProvided" />
+      <xs:enumeration value="idNotKnown" />
+      <xs:enumeration value="idNotRequired" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeviceIDStatus_t" nillable="true" type="tns:DeviceIDStatus_t" />
+  <xs:simpleType name="DeviceIDType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="deviceIdentifier" />
+      <xs:enumeration value="explicitPublic">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPublicUnknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPublicInternational">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPublicNational">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPublicNetworkSpecific">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPublicSubscriber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPublicAbbreviated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">35</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPrivate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">40</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPrivateUnknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">50</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPrivateLevel3RegionalNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">51</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPrivateLevel2RegionalNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPrivateLevel1RegionalNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">53</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPrivatePtnSpecificNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">54</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPrivateLocalNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">55</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="explicitPrivateAbbreviated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">56</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="otherPlan">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="trunkIdentifier">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="trunkGroupIdentifier">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeviceIDType_t" nillable="true" type="tns:DeviceIDType_t" />
+  <xs:complexType name="CSTALoggedOffEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="agentDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="agentGroup" nillable="true" type="xs:string" />
+      <xs:element name="agentID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTALoggedOffEvent_t" nillable="true" type="tns:CSTALoggedOffEvent_t" />
+  <xs:complexType name="CSTACallClearedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="clearedCall" type="tns:ConnectionID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTACallClearedEvent_t" nillable="true" type="tns:CSTACallClearedEvent_t" />
+  <xs:simpleType name="CSTAEventCause_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ecNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecInitNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecActiveMonitor">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecAlternate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecBusy">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCallBack">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCallCancelled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCallForwardAlways">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCallForwardBusy">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCallForwardNoAnswer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCallForward">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCallNotAnswered">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCallPickup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecCampOn">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecDestNotObtainable">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecDoNotDisturb">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecIncompatibleDestination">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecInvalidAccountCode">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecKeyConference">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecLockout">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecMaintenance">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecNetworkCongestion">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecNetworkNotObtainable">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecNewCall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecNoAvailableAgents">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecOverride">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecPark">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecOverflow">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecRecall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">27</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecRedirected">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">28</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecReorderTone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">29</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecResourcesNotAvailable">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecSilentMonitor">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecTransfer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecTrunksBusy">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecVoiceUnitInitiator">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecNetworkSignal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">46</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecAlertTimeExpired">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecDestOutOfOrder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecNotSupportedBearerService">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecUnassignedNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">81</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ecIncompatibleBearerService">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">87</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CSTAEventCause_t" nillable="true" type="tns:CSTAEventCause_t" />
+  <xs:simpleType name="LocalConnectionState_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="csNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="csNull">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="csInitiate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="csAlerting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="csConnect">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="csHold">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="csQueued">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="csFail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LocalConnectionState_t" nillable="true" type="tns:LocalConnectionState_t" />
+  <xs:complexType name="ATTCallClearedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="reason" type="tns:ATTReasonCode_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTCallClearedEvent_t" nillable="true" type="tns:ATTCallClearedEvent_t" />
+  <xs:simpleType name="ATTReasonCode_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="arNone" />
+      <xs:enumeration value="arAnswerNormal" />
+      <xs:enumeration value="arAnswerTimed" />
+      <xs:enumeration value="arAnswerVoiceEnergy" />
+      <xs:enumeration value="arAnswerMachineDetected" />
+      <xs:enumeration value="arSitReorder" />
+      <xs:enumeration value="arSitNoCircuit" />
+      <xs:enumeration value="arSitIntercept" />
+      <xs:enumeration value="arSitVacantCode" />
+      <xs:enumeration value="arSitIneffectiveOther" />
+      <xs:enumeration value="arSitUnknown" />
+      <xs:enumeration value="arInQueue" />
+      <xs:enumeration value="arServiceObserver" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTReasonCode_t" nillable="true" type="tns:ATTReasonCode_t" />
+  <xs:complexType name="CSTAConferencedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="addedParty" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="confController" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="conferenceConnections" nillable="true" type="tns:ArrayOfConnection_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+      <xs:element name="primaryOldCall" type="tns:ConnectionID_t" />
+      <xs:element name="secondaryOldCall" type="tns:ConnectionID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAConferencedEvent_t" nillable="true" type="tns:CSTAConferencedEvent_t" />
+  <xs:complexType name="ArrayOfConnection_t">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Connection_t" type="tns:Connection_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConnection_t" nillable="true" type="tns:ArrayOfConnection_t" />
+  <xs:complexType name="Connection_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="party" type="tns:ConnectionID_t" />
+      <xs:element name="staticDevice" type="tns:ExtendedDeviceID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Connection_t" nillable="true" type="tns:Connection_t" />
+  <xs:complexType name="ATTConferencedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+      <xs:element name="distributingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="distributingVDN" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="originalCallInfo" type="tns:ATTOriginalCallInfo_t" />
+      <xs:element name="trunkList" type="tns:ATTTrunkList_t" />
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTConferencedEvent_t" nillable="true" type="tns:ATTConferencedEvent_t" />
+  <xs:complexType name="ATTOriginalCallInfo_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callOriginatorInfo" type="tns:ATTCallOriginatorInfo_t" />
+      <xs:element name="calledDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="callingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+      <xs:element name="flexibleBilling" type="xs:boolean" />
+      <xs:element name="lookaheadInfo" type="tns:ATTLookaheadInfo_t" />
+      <xs:element name="reason" type="tns:ATTReasonForCallInfo_t" />
+      <xs:element name="trunkGroup" nillable="true" type="xs:string" />
+      <xs:element name="trunkMember" nillable="true" type="xs:string" />
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+      <xs:element name="userEnteredCode" type="tns:ATTUserEnteredCode_t" />
+      <xs:element name="userInfo" type="tns:ATTUserToUserInfo_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTOriginalCallInfo_t" nillable="true" type="tns:ATTOriginalCallInfo_t" />
+  <xs:complexType name="ATTCallOriginatorInfo_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callOriginatorType" type="xs:short" />
+      <xs:element name="hasInfo" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTCallOriginatorInfo_t" nillable="true" type="tns:ATTCallOriginatorInfo_t" />
+  <xs:complexType name="ATTLookaheadInfo_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="hours" type="xs:short" />
+      <xs:element name="minutes" type="xs:short" />
+      <xs:element name="priority" type="tns:ATTPriority_t" />
+      <xs:element name="seconds" type="xs:short" />
+      <xs:element name="sourceVDN" nillable="true" type="xs:string" />
+      <xs:element name="type" type="tns:ATTInterflow_t" />
+      <xs:element name="uSourceVDN" type="tns:ATTUnicodeDeviceID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTLookaheadInfo_t" nillable="true" type="tns:ATTLookaheadInfo_t" />
+  <xs:simpleType name="ATTPriority_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="laiNotInQueue" />
+      <xs:enumeration value="laiLow" />
+      <xs:enumeration value="laiMedium" />
+      <xs:enumeration value="laiHigh" />
+      <xs:enumeration value="laiTop" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTPriority_t" nillable="true" type="tns:ATTPriority_t" />
+  <xs:simpleType name="ATTInterflow_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="laiNoInterflow">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="laiAllInterflow">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="laiThresholdInterflow">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="laiVectoringInterflow">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTInterflow_t" nillable="true" type="tns:ATTInterflow_t" />
+  <xs:complexType name="ATTUnicodeDeviceID">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="count" type="xs:unsignedShort" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="value" nillable="true" type="q6:ArrayOfshort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTUnicodeDeviceID" nillable="true" type="tns:ATTUnicodeDeviceID" />
+  <xs:simpleType name="ATTReasonForCallInfo_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="orNone" />
+      <xs:enumeration value="orConsultation" />
+      <xs:enumeration value="orConferenced" />
+      <xs:enumeration value="orTransferred" />
+      <xs:enumeration value="orNewCall" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTReasonForCallInfo_t" nillable="true" type="tns:ATTReasonForCallInfo_t" />
+  <xs:complexType name="ATTUserEnteredCode_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="collectVDN" nillable="true" type="xs:string" />
+      <xs:element name="data" nillable="true" type="xs:string" />
+      <xs:element name="indicator" type="tns:ATTUserEnteredCodeIndicator_t" />
+      <xs:element name="type" type="tns:ATTUserEnteredCodeType_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTUserEnteredCode_t" nillable="true" type="tns:ATTUserEnteredCode_t" />
+  <xs:simpleType name="ATTUserEnteredCodeIndicator_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ueCollect" />
+      <xs:enumeration value="ueEntered" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTUserEnteredCodeIndicator_t" nillable="true" type="tns:ATTUserEnteredCodeIndicator_t" />
+  <xs:simpleType name="ATTUserEnteredCodeType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ueNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ueAny">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ueLoginDigits" />
+      <xs:enumeration value="ueCallPrompter">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ueDataBaseProvided">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ueToneDetector">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTUserEnteredCodeType_t" nillable="true" type="tns:ATTUserEnteredCodeType_t" />
+  <xs:complexType name="ATTUserToUserInfo_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="data" type="tns:ATTUserToUserInfo_Data" />
+      <xs:element name="type" type="tns:ATTUUIProtocolType_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTUserToUserInfo_t" nillable="true" type="tns:ATTUserToUserInfo_t" />
+  <xs:complexType name="ATTUserToUserInfo_Data">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="length" type="xs:unsignedShort" />
+      <xs:element name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTUserToUserInfo_Data" nillable="true" type="tns:ATTUserToUserInfo_Data" />
+  <xs:simpleType name="ATTUUIProtocolType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="uuiNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="uuiUserSpecific">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="uuiIa5Ascii">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTUUIProtocolType_t" nillable="true" type="tns:ATTUUIProtocolType_t" />
+  <xs:complexType name="ATTTrunkList_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="count" type="xs:unsignedShort" />
+      <xs:element name="trunks" nillable="true" type="tns:ArrayOfATTTrunkInfo_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTTrunkList_t" nillable="true" type="tns:ATTTrunkList_t" />
+  <xs:complexType name="ArrayOfATTTrunkInfo_t">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ATTTrunkInfo_t" type="tns:ATTTrunkInfo_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfATTTrunkInfo_t" nillable="true" type="tns:ArrayOfATTTrunkInfo_t" />
+  <xs:complexType name="ATTTrunkInfo_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="connection" type="tns:ConnectionID_t" />
+      <xs:element name="trunkGroup" nillable="true" type="xs:string" />
+      <xs:element name="trunkMember" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTTrunkInfo_t" nillable="true" type="tns:ATTTrunkInfo_t" />
+  <xs:complexType name="CSTAConnectionClearedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="droppedConnection" type="tns:ConnectionID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+      <xs:element name="releasingDevice" type="tns:ExtendedDeviceID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAConnectionClearedEvent_t" nillable="true" type="tns:CSTAConnectionClearedEvent_t" />
+  <xs:complexType name="CSTADeliveredEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alertingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="calledDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="callingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="connection" type="tns:ConnectionID_t" />
+      <xs:element name="lastRedirectionDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTADeliveredEvent_t" nillable="true" type="tns:CSTADeliveredEvent_t" />
+  <xs:complexType name="ATTDeliveredEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callOriginatorInfo" type="tns:ATTCallOriginatorInfo_t" />
+      <xs:element name="deliveredType" type="tns:ATTDeliveredType_t" />
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+      <xs:element name="distributingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="distributingVDN" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="flexibleBilling" type="xs:boolean" />
+      <xs:element name="lookaheadInfo" type="tns:ATTLookaheadInfo_t" />
+      <xs:element name="originalCallInfo" type="tns:ATTOriginalCallInfo_t" />
+      <xs:element name="reason" type="tns:ATTReasonCode_t" />
+      <xs:element name="split" nillable="true" type="xs:string" />
+      <xs:element name="trunkGroup" nillable="true" type="xs:string" />
+      <xs:element name="trunkMember" nillable="true" type="xs:string" />
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+      <xs:element name="userEnteredCode" type="tns:ATTUserEnteredCode_t" />
+      <xs:element name="userInfo" type="tns:ATTUserToUserInfo_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTDeliveredEvent_t" nillable="true" type="tns:ATTDeliveredEvent_t" />
+  <xs:simpleType name="ATTDeliveredType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="deliveredToAcd">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="deliveredToStation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="deliveredOther">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTDeliveredType_t" nillable="true" type="tns:ATTDeliveredType_t" />
+  <xs:complexType name="CSTADivertedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="connection" type="tns:ConnectionID_t" />
+      <xs:element name="divertingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+      <xs:element name="newDestination" type="tns:ExtendedDeviceID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTADivertedEvent_t" nillable="true" type="tns:CSTADivertedEvent_t" />
+  <xs:complexType name="ATTDivertedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTDivertedEvent_t" nillable="true" type="tns:ATTDivertedEvent_t" />
+  <xs:complexType name="CSTAEstablishedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="answeringDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="calledDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="callingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="establishedConnection" type="tns:ConnectionID_t" />
+      <xs:element name="lastRedirectionDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAEstablishedEvent_t" nillable="true" type="tns:CSTAEstablishedEvent_t" />
+  <xs:complexType name="ATTEstablishedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callOriginatorInfo" type="tns:ATTCallOriginatorInfo_t" />
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+      <xs:element name="distributingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="distributingVDN" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="flexibleBilling" type="xs:boolean" />
+      <xs:element name="lookaheadInfo" type="tns:ATTLookaheadInfo_t" />
+      <xs:element name="originalCallInfo" type="tns:ATTOriginalCallInfo_t" />
+      <xs:element name="reason" type="tns:ATTReasonCode_t" />
+      <xs:element name="split" nillable="true" type="xs:string" />
+      <xs:element name="trunkGroup" nillable="true" type="xs:string" />
+      <xs:element name="trunkMember" nillable="true" type="xs:string" />
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+      <xs:element name="userEnteredCode" type="tns:ATTUserEnteredCode_t" />
+      <xs:element name="userInfo" type="tns:ATTUserToUserInfo_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTEstablishedEvent_t" nillable="true" type="tns:ATTEstablishedEvent_t" />
+  <xs:complexType name="CSTAFailedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="calledDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="failedConnection" type="tns:ConnectionID_t" />
+      <xs:element name="failingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAFailedEvent_t" nillable="true" type="tns:CSTAFailedEvent_t" />
+  <xs:complexType name="ATTFailedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTFailedEvent_t" nillable="true" type="tns:ATTFailedEvent_t" />
+  <xs:complexType name="CSTAHeldEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="heldConnection" type="tns:ConnectionID_t" />
+      <xs:element name="holdingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAHeldEvent_t" nillable="true" type="tns:CSTAHeldEvent_t" />
+  <xs:complexType name="CSTANetworkReachedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="calledDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="connection" type="tns:ConnectionID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+      <xs:element name="trunkUsed" type="tns:ExtendedDeviceID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTANetworkReachedEvent_t" nillable="true" type="tns:CSTANetworkReachedEvent_t" />
+  <xs:complexType name="ATTNetworkReachedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+      <xs:element name="progressDescription" type="tns:ATTProgressDescription_t" />
+      <xs:element name="progressLocation" type="tns:ATTProgressLocation_t" />
+      <xs:element name="trunkGroup" nillable="true" type="xs:string" />
+      <xs:element name="trunkMember" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTNetworkReachedEvent_t" nillable="true" type="tns:ATTNetworkReachedEvent_t" />
+  <xs:simpleType name="ATTProgressDescription_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pdNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pdCallOffIsdn" />
+      <xs:enumeration value="pdDestNotIsdn" />
+      <xs:enumeration value="pdOrigNotIsdn" />
+      <xs:enumeration value="pdCallOnIsdn" />
+      <xs:enumeration value="pdInband">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTProgressDescription_t" nillable="true" type="tns:ATTProgressDescription_t" />
+  <xs:simpleType name="ATTProgressLocation_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="plNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="plUser">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="plPubLocal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="plPubRemote">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="plPrivRemote">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ATTProgressLocation_t" nillable="true" type="tns:ATTProgressLocation_t" />
+  <xs:complexType name="CSTAOriginatedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="calledDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="callingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+      <xs:element name="originatedConnection" type="tns:ConnectionID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAOriginatedEvent_t" nillable="true" type="tns:CSTAOriginatedEvent_t" />
+  <xs:complexType name="ATTOriginatedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="logicalAgent" nillable="true" type="xs:string" />
+      <xs:element name="userInfo" type="tns:ATTUserToUserInfo_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTOriginatedEvent_t" nillable="true" type="tns:ATTOriginatedEvent_t" />
+  <xs:complexType name="CSTAQueuedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="calledDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="callingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="lastRedirectionDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+      <xs:element name="numberQueued" type="xs:short" />
+      <xs:element name="queue" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="queuedConnection" type="tns:ConnectionID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAQueuedEvent_t" nillable="true" type="tns:CSTAQueuedEvent_t" />
+  <xs:complexType name="ATTQueuedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTQueuedEvent_t" nillable="true" type="tns:ATTQueuedEvent_t" />
+  <xs:complexType name="CSTARetrievedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+      <xs:element name="retrievedConnection" type="tns:ConnectionID_t" />
+      <xs:element name="retrievingDevice" type="tns:ExtendedDeviceID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTARetrievedEvent_t" nillable="true" type="tns:CSTARetrievedEvent_t" />
+  <xs:complexType name="CSTAServiceInitiatedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="initiatedConnection" type="tns:ConnectionID_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAServiceInitiatedEvent_t" nillable="true" type="tns:CSTAServiceInitiatedEvent_t" />
+  <xs:complexType name="ATTServiceInitiatedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTServiceInitiatedEvent_t" nillable="true" type="tns:ATTServiceInitiatedEvent_t" />
+  <xs:complexType name="CSTATransferredEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="localConnectionInfo" type="tns:LocalConnectionState_t" />
+      <xs:element name="primaryOldCall" type="tns:ConnectionID_t" />
+      <xs:element name="secondaryOldCall" type="tns:ConnectionID_t" />
+      <xs:element name="transferredConnections" type="tns:ConnectionList_t" />
+      <xs:element name="transferredDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="transferringDevice" type="tns:ExtendedDeviceID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTATransferredEvent_t" nillable="true" type="tns:CSTATransferredEvent_t" />
+  <xs:complexType name="ATTTransferredEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceHistory" type="tns:DeviceHistory_t" />
+      <xs:element name="distributingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="distributingVDN" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="originalCallInfo" type="tns:ATTOriginalCallInfo_t" />
+      <xs:element name="trunkList" type="tns:ATTTrunkList_t" />
+      <xs:element name="ucid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTTransferredEvent_t" nillable="true" type="tns:ATTTransferredEvent_t" />
+  <xs:complexType name="CSTACallInformationEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="accountInfo" nillable="true" type="xs:string" />
+      <xs:element name="authorisationCode" nillable="true" type="xs:string" />
+      <xs:element name="connection" type="tns:ConnectionID_t" />
+      <xs:element name="device" type="tns:ExtendedDeviceID_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTACallInformationEvent_t" nillable="true" type="tns:CSTACallInformationEvent_t" />
+  <xs:complexType name="CSTADoNotDisturbEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="device" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="doNotDisturbOn" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTADoNotDisturbEvent_t" nillable="true" type="tns:CSTADoNotDisturbEvent_t" />
+  <xs:complexType name="CSTAForwardingEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="device" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="forwardingInformation" type="tns:ForwardingInfo_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAForwardingEvent_t" nillable="true" type="tns:CSTAForwardingEvent_t" />
+  <xs:complexType name="ForwardingInfo_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="forwardDN" nillable="true" type="xs:string" />
+      <xs:element name="forwardingOn" type="xs:boolean" />
+      <xs:element name="forwardingType" type="tns:ForwardingType_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ForwardingInfo_t" nillable="true" type="tns:ForwardingInfo_t" />
+  <xs:simpleType name="ForwardingType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="fwdImmediate" />
+      <xs:enumeration value="fwdBusy" />
+      <xs:enumeration value="fwdNoAns" />
+      <xs:enumeration value="fwdBusyInt" />
+      <xs:enumeration value="fwdBusyExt" />
+      <xs:enumeration value="fwdNoAnsInt" />
+      <xs:enumeration value="fwdNoAnsExt" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ForwardingType_t" nillable="true" type="tns:ForwardingType_t" />
+  <xs:complexType name="CSTAMessageWaitingEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceForMessage" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="invokingDevice" type="tns:ExtendedDeviceID_t" />
+      <xs:element name="messageWaitingOn" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAMessageWaitingEvent_t" nillable="true" type="tns:CSTAMessageWaitingEvent_t" />
+  <xs:complexType name="CSTABackInServiceEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="device" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTABackInServiceEvent_t" nillable="true" type="tns:CSTABackInServiceEvent_t" />
+  <xs:complexType name="CSTAOutOfServiceEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+      <xs:element name="device" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAOutOfServiceEvent_t" nillable="true" type="tns:CSTAOutOfServiceEvent_t" />
+  <xs:complexType name="CSTAPrivateStatusEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="data" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAPrivateStatusEvent_t" nillable="true" type="tns:CSTAPrivateStatusEvent_t" />
+  <xs:complexType name="CSTAMonitorEndedEvent_t">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cause" type="tns:CSTAEventCause_t" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSTAMonitorEndedEvent_t" nillable="true" type="tns:CSTAMonitorEndedEvent_t" />
+</xs:schema>
